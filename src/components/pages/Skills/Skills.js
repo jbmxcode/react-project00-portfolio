@@ -1,10 +1,15 @@
 import React from 'react'
 import { skillsData } from './Data'
+import { motion } from 'framer-motion'
 import './Skills.scss'
 
 function Skills() {
     return (
-        <div className="skillsPage row">
+        <motion.div className="skillsPage row"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
             <div className="container">
                 <section className="skills">
                     <div className="summary item-text">
@@ -37,7 +42,7 @@ function Skills() {
                     </ul>
                 </section>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

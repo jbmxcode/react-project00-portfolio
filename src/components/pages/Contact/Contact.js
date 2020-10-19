@@ -1,9 +1,14 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import './Contact.scss'
 
 function Contact() {
     return (
-        <div className="contactPage row">
+        <motion.div className="contactPage row"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
             <div className="container">
                 <section className="contact">
                     <nav className="action-links-group">
@@ -12,7 +17,7 @@ function Contact() {
                     </nav>
                 </section>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

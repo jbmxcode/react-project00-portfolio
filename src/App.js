@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import ReactGA from 'react-ga';
-import { createBrowserHistory } from 'history';
+
+import ReactGA from 'react-ga'
 import { Scrollbars } from 'react-custom-scrollbars'
+import { AnimatePresence } from 'framer-motion'
+
 import Navbar from './components/layouts/Navbar'
 import Footer from './components/layouts/Footer'
 import Home from './components/pages/Home/Home'
@@ -13,28 +15,28 @@ import Contact from './components/pages/Contact/Contact'
 
 import './App.scss'
 
+ReactGA.initialize('UA-180826242-1');
+
 function App() {
-    const history = createBrowserHistory();
-    
-    history.listen(location => {
-        ReactGA.initialize('UA-180826242-1');
-        ReactGA.set({ page: location.pathname }); 
-        ReactGA.pageview(location.pathname); 
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
     });
 
     return (
-        <Router history={ history }>
+        <Router>
             <Navbar />
-            <main className="main" role="main">                
-                <Scrollbars autoHide>
-                    <Switch>
-                        <Route path='/' exact component={ Home } />
-                        <Route path='/about' exact component={ About } />
-                        <Route path='/skills' exact component={ Skills } />
-                        <Route path='/projects' exact component={ Projects } />
-                        <Route path='/contact' exact component={ Contact } />
-                    </Switch>
-                </Scrollbars>
+            <main className="main" role="main">    
+                <AnimatePresence>            
+                    <Scrollbars autoHide>
+                        <Switch>
+                            <Route path='/' exact component={ Home } />
+                            <Route path='/about' exact component={ About } />
+                            <Route path='/skills' exact component={ Skills } />
+                            <Route path='/projects' exact component={ Projects } />
+                            <Route path='/contact' exact component={ Contact } />
+                        </Switch>
+                    </Scrollbars>
+                </AnimatePresence>
             </main>
             <Footer />
         </Router>

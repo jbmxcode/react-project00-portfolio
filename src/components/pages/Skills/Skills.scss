@@ -1,0 +1,43 @@
+.skillsPage {
+    .summary {
+        flex: 1;
+        letter-spacing: 4.13px;
+        line-height: 1.875rem;
+    }
+
+    p { 
+        margin: 2rem 0; 
+
+        &:first-child { margin-top: 0; }
+
+        strong { color: var(--primary-color); }
+    }
+
+    .items-list {
+        flex: 1;
+        display: block;
+        column: {
+            count: 2;
+            gap: 20px;
+        }
+        font: {
+            size: 1.125rem;
+            weight: 700;
+        }
+        text-transform: uppercase;
+
+        li { margin: 0 0 1rem; }
+    }
+
+    @media screen and(min-width: 768px) {
+        .skills { display: flex; }
+    }
+
+    @media screen and(min-width: 1024px) {
+        .items-list { 
+            flex: none; 
+            width: 595px;
+            margin: 0 0 0 4rem;
+        }
+    }
+}

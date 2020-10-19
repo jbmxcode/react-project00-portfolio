@@ -1,0 +1,110 @@
+.nav {
+    &-menu {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        list-style-type: none;
+        background-color: var(--secondary-color);
+        transform: translateX(-100%);
+        transition: opacity .5s, transform .5s;
+
+        &.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    &-icon {
+        position: absolute;
+        z-index: 99;
+        top: 20px;
+        right: 20px;
+
+        svg {
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            transition: fill .5s;
+
+            &:hover, &:after { fill: var(--primary-color); }
+        }
+    }
+
+    &-item { margin: 1rem 0; }
+
+    &-link {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        padding: .5rem 0;
+        font: {
+            size: 1.25rem;
+            weight: 300; 
+        }
+        text: {
+            transform: uppercase;
+            decoration: none;
+        }
+        letter-spacing: 1rem;
+        color: var(--c-white);
+        transition: color .5s;
+
+        &.active {
+            color: var(--primary-color);
+
+            &:before { transform: translateX(0); }
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--c-black);
+            transform: translateX(-100%);
+            transition: transform .5s;
+        }
+
+        &:hover, &:focus { 
+            color: var(--primary-color); 
+
+            &:before { transform: translateX(0); }
+        }
+    }
+
+    @media screen and (min-width: 1023px) {
+        &-menu {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            width: auto;
+            height: auto;
+            margin-top: 28px;
+            padding: 0;
+            transform: none;
+        }
+
+        &-icon { display: none; }
+
+        &-link { 
+            font-size: .875rem; 
+
+            &:before { width: calc(100% - 2rem); }
+        }
+    }
+
+    @media screen and (min-width: 1700px) {
+        &-link {
+            letter-spacing: 2rem;
+        }
+    }
+}

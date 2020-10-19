@@ -1,0 +1,44 @@
+.projectsPage {
+    .item { 
+        flex: 1; 
+        margin: 1.5rem 0;
+
+        ul {
+            display: flex; 
+            margin-top: .5rem;
+            list-style-type: none; 
+
+            li {
+                a {
+                    display: block;
+                    margin-right: 1rem;
+                    padding-right: 1rem;
+                    font-size: .875rem;
+                    text: {
+                        transform: uppercase;
+                        decoration: none;
+                    }
+                    line-height: 1;
+                    letter-spacing: 4.9px;
+                    border-right: 1px solid var(--primary-color);
+                    color: var(--primary-color);
+                    transition: color .5s;
+
+                    &:hover, &:focus { color: var(--c-white); }
+                }
+
+                &:last-child a { border-right: 0; }
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .items-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .item { flex: 0 1 calc(50% - 4rem); }
+    }
+}

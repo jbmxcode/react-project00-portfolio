@@ -1,5 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import ReactGA from 'react-ga';
+import { createBrowserHistory } from 'history';
 import { Scrollbars } from 'react-custom-scrollbars'
 import Navbar from './components/layouts/Navbar'
 import Footer from './components/layouts/Footer'
@@ -12,8 +14,16 @@ import Contact from './components/pages/Contact/Contact'
 import './App.scss'
 
 function App() {
+    const history = createBrowserHistory();
+    
+    history.listen(location => {
+        ReactGA.initialize('UA-180826242-1');
+        ReactGA.set({ page: location.pathname }); 
+        ReactGA.pageview(location.pathname); 
+    });
+
     return (
-        <Router>
+        <Router history={ history }>
             <Navbar />
             <main className="main" role="main">                
                 <Scrollbars autoHide>

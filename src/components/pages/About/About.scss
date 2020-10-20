@@ -3,16 +3,13 @@
     flex-direction: column;
     align-items: center;
 
-    .item {
-        margin-bottom: 4rem;
-    }
+    .item { margin-bottom: 4rem; }
 
     .about-me {
         font: {
             size: 1.25rem;
             weight: 400;
         }
-        text-align: center;
         line-height: 1.875;
         letter-spacing: 4.9px;
 

@@ -11,13 +11,13 @@ function Footer() {
                     <nav className="social">
                         <ul className="items-list">
                             <li className="item">
-                                <a href="https://facebook.com">FB</a>
+                                <a href="https://www.facebook.com/josuebaloymelendez/">FB</a>
                             </li>
                             <li className="item">
                                 <a href="https://twitter.com">TW</a>
                             </li>
                             <li className="item">
-                                <a href="https://linkedin.com">IN</a>
+                                <a href="https://www.linkedin.com/in/josuebaloymelendez/">IN</a>
                             </li>
                         </ul>
                     </nav>

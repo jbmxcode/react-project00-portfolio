@@ -6,9 +6,9 @@
     --secondary-font: Arial, sans-serif;
 
     // Branding Colors
-	--primary-color: rgb(0, 203, 255);
+	--primary-color: #00cbff;
 	--color-over-primary: rgb(0, 0, 0);
-	--secondary-color: rgb(34, 34, 34);
+	--secondary-color: #222222;
     --color-over-secondary: rgb(255, 255, 255);
 
     --c-white: rgb(255, 255, 255);
@@ -140,7 +140,7 @@ main {
     }
     letter-spacing: 7.22px;
     border: 3px solid var(--c-black);
-    color: var(--c-black);
+    color: var(--primary-color);
     transition: color .5s, background-color .5s, border .5s;
 
     &:hover, &:focus {

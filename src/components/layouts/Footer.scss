@@ -26,7 +26,11 @@
         }
 
         .item {
-            &:first-child a { color: var(--primary-color); }
+            &:first-child a { 
+                color: var(--primary-color); 
+
+                &:hover, &:focus { color: var(--c-white); }
+            }
 
             a {
                 margin: .5rem;

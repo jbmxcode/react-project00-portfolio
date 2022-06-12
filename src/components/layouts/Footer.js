@@ -16,9 +16,6 @@ function Footer() {
                             <li className="item">
                                 <a href="https://www.linkedin.com/in/josuebaloymelendez/" target="_blank" rel="noopener noreferrer">IN</a>
                             </li>
-                            <li className="item">
-                                <a href="https://github.com/jbmxworld" target="_blank" rel="noopener noreferrer">GIT</a>
-                            </li>
                         </ul>
                     </nav>
                 </div>
